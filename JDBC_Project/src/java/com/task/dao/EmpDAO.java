@@ -10,4 +10,5 @@ package com.task.dao;
  */
 public class EmpDAO {
     
+    
 }

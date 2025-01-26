@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/adi18/OneDrive/Documents/JAVA_JDBC_Project/JDBC_Project/src/java/com/task/utility/ConnectionPool.java</file>
+            <file>file:/C:/Users/adi18/OneDrive/Documents/JAVA_JDBC_Project/JDBC_Project/web/style.css</file>
             <file>file:/C:/Users/adi18/OneDrive/Documents/JAVA_JDBC_Project/JDBC_Project/src/java/com/task/bean/EmpBean.java</file>
             <file>file:/C:/Users/adi18/OneDrive/Documents/JAVA_JDBC_Project/JDBC_Project/src/java/com/task/bean/UsersBean.java</file>
             <file>file:/C:/Users/adi18/OneDrive/Documents/JAVA_JDBC_Project/JDBC_Project/web/index.html</file>
+            <file>file:/C:/Users/adi18/OneDrive/Documents/JAVA_JDBC_Project/JDBC_Project/src/java/com/task/dao/EmpDAO.java</file>
         </group>
     </open-files>
 </project-private>
