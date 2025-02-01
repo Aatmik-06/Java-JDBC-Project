@@ -16,7 +16,6 @@ body {
   color: white;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
 }
 
 #form-main {
@@ -60,3 +59,5 @@ body {
 #form-main #btn:hover {
   background-color: aliceblue;
 }
+
+

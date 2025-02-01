@@ -12,13 +12,13 @@ public class EmpBean {
     private int Empno;
     private String EmpName;
     private String Job;
-    private String Mgr;
-    private int HireDate;
+    private int Mgr;
+    private String HireDate;
     private double Salary;
     private double Comm;
     private int Deptno;
 
-    //    Constructor
+//    Constructor
 //  non parameterised constructor 
     public EmpBean() {
     }
@@ -26,7 +26,7 @@ public class EmpBean {
     //    Constructor
 //  parameterised constructor 
 
-    public EmpBean(int Empno, String EmpName, String Job, String Mgr, int HireDate, double Salary, double Comm, int Deptno) {
+    public EmpBean(int Empno, String EmpName, String Job, int Mgr, String HireDate, double Salary, double Comm, int Deptno) {
         this.Empno = Empno;
         this.EmpName = EmpName;
         this.Job = Job;
@@ -64,19 +64,19 @@ public class EmpBean {
         this.Job = Job;
     }
 
-    public String getMgr() {
+    public int getMgr() {
         return Mgr;
     }
 
-    public void setMgr(String Mgr) {
+    public void setMgr(int Mgr) {
         this.Mgr = Mgr;
     }
 
-    public int getHireDate() {
+    public String getHireDate() {
         return HireDate;
     }
 
-    public void setHireDate(int HireDate) {
+    public void setHireDate(String HireDate) {
         this.HireDate = HireDate;
     }
 
@@ -103,6 +103,6 @@ public class EmpBean {
     public void setDeptno(int Deptno) {
         this.Deptno = Deptno;
     }
-    
+
     
 }

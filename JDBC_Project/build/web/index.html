@@ -9,23 +9,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="style2.css">
     </head>
-    <body>
-        <div  id="main" >
-        <nav>
-            
-        </nav>
-    <Form action="P1Controller" id="form-main"> 
-    <h1>Employee Form</h1>
-    <label>Employee Number</label> <input type="number"> 
-    <label>Employee Name</label> <input type="text"> 
-    <label>Job</label> <input type="text">
-    <label>MGR</label> <input type="text">
-    <label>Hiredate</label> <input type="date">
-    <label>Salary</label> <input type="number">
-    <label>Department Number</label> <input type="number">
-    <input type="submit" name="submit" id="btn"/>
-    </Form>
+    
+     <div  id="main" >
+    
+    <form action="index" id="form-main"> 
+    <h1>Login</h1>
+
+    <label for="username">User Name</label>
+    <input type="text" id="username" name="username" placeholder="Enter username">
+    
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter password">
+    
+    <input type="submit" name="submit" value="Login" id="btn"/>
+    </form>
 
     </div>
     </body>
