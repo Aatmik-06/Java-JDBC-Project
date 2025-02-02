@@ -39,6 +39,49 @@ public class EmpDAO {
         return r;
     }
     
+    public int deleteEmp(int empNo){
+        conn = ConnectionPool.connectDB();
+        
+        int r=0;
+        
+        String sql = "delete from emp where empno='"+empNo+"'";
+        
+        Statement stmt;
+        
+        try {
+            stmt = conn.createStatement();
+            
+            r= stmt.executeUpdate(sql);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return r;
+       
+    }
+    
+     public int updateEmp(EmpBean eb){
+        conn=ConnectionPool.connectDB();
+        int r=0;
+        //step3:
+       
+       String sql="update emp set empname='"+eb.getEmpName()+"',job='"+eb.getJob()+"',mgr='"+eb.getMgr()+"',hiredate='"+eb.getHireDate()+"',salary='"+eb.getSalary()+"',comm='"+eb.getComm()+"',deptno='"+eb.getDeptno()+"' where empno='"+eb.getEmpno()+"'";
+      
+        //step4:
+        Statement stmt;
+        try {
+            stmt = conn.createStatement();
+            //step5:
+        r=stmt.executeUpdate(sql);
+              //step6:
+        conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return r;
+    }
+    
     public ArrayList<EmpBean>findAll(){
         
         ArrayList<EmpBean> list = new ArrayList<EmpBean>();
@@ -73,26 +116,6 @@ public class EmpDAO {
         }
         return list;
     }
-    public int deleteEmp(int empNo){
-        conn = ConnectionPool.connectDB();
-        
-        int r=0;
-        
-        String sql = "delete from emp where empno='"+empNo+"'";
-        
-        Statement stmt;
-        
-        try {
-            stmt = conn.createStatement();
-            
-            r= stmt.executeUpdate(sql);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return r;
-       
-    }
     
     public EmpBean findbyid(int empno){
         EmpBean eb = new EmpBean();
@@ -123,27 +146,76 @@ public class EmpDAO {
         }
         return eb;
     }
-      public int updateEmp(EmpBean eb){
-        conn=ConnectionPool.connectDB();
-        int r=0;
-        //step3:
+    
+    public ArrayList<EmpBean> findbydeptno(int deptno){
        
-       String sql="update emp set empname='"+eb.getEmpName()+"',job='"+eb.getJob()+"',mgr='"+eb.getMgr()+"',hiredate='"+eb.getHireDate()+"',salary='"+eb.getSalary()+"',comm='"+eb.getComm()+"',deptno='"+eb.getDeptno()+"' where empno='"+eb.getEmpno()+"'";
-      
-        //step4:
+        conn = ConnectionPool.connectDB();
+        
+        ArrayList<EmpBean> list = new ArrayList<EmpBean>();
+        
+        String sql = "select * from emp where deptno='"+deptno+"'";
+        
         Statement stmt;
         try {
             stmt = conn.createStatement();
-            //step5:
-        r=stmt.executeUpdate(sql);
-              //step6:
+           
+            ResultSet rs = stmt.executeQuery(sql);
+             
+              while (rs.next()){
+                  EmpBean e = new EmpBean();
+                  
+                  e.setComm(rs.getFloat("Comm"));
+                  e.setDeptno(rs.getInt("Deptno"));
+                  e.setEmpName(rs.getString("Empname"));
+                  e.setEmpno(rs.getInt("Empno"));
+                  e.setHireDate(rs.getString("Hiredate"));
+                  e.setJob(rs.getString("Job"));
+                  e.setMgr(rs.getInt("Mgr"));
+                  e.setSalary(rs.getDouble("Salary"));
+                  list.add(e);
+              }
         conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        return r;
+        return list;
     }
+    
+    public ArrayList<EmpBean> findbyjob(String job){
+       
+        conn = ConnectionPool.connectDB();
+        
+        ArrayList<EmpBean> list = new ArrayList<EmpBean>();
+        
+        String sql = "select * from emp where job='"+job+"'";
+        
+        Statement stmt;
+        try {
+            stmt = conn.createStatement();
+           
+            ResultSet rs = stmt.executeQuery(sql);
+             
+              while (rs.next()){
+                  EmpBean e = new EmpBean();
+                  
+                  e.setComm(rs.getFloat("Comm"));
+                  e.setDeptno(rs.getInt("Deptno"));
+                  e.setEmpName(rs.getString("Empname"));
+                  e.setEmpno(rs.getInt("Empno"));
+                  e.setHireDate(rs.getString("Hiredate"));
+                  e.setJob(rs.getString("Job"));
+                  e.setMgr(rs.getInt("Mgr"));
+                  e.setSalary(rs.getDouble("Salary"));
+                  list.add(e);
+              }
+        conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    
+     
     public static void main(String[] args) {
         
     }

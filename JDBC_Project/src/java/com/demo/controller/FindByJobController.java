@@ -4,18 +4,21 @@
  */
 package com.demo.controller;
 
+import com.task.bean.EmpBean;
+import com.task.dao.EmpDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  *
  * @author adi18
  */
-public class index extends HttpServlet {
+public class FindByJobController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,32 +37,46 @@ public class index extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EmpAddController</title>");
+            out.println("<title>Servlet FindByJobController</title>");
             out.println("</head>");
             out.println("<body>");
             
-out.println("<body>");
-out.println("<div >");
-out.println("<h1>JDBC Project</h1>");
-out.println("</div>");
-out.println("<div >");
-out.println("<div >");
-out.println("<div >");
-out.println("<form action='addEmp'>   <button> Add Employee </button> </form>");
-out.println("<form action='viewEmpController'>  <button>View All Employee</button></form>    ");
-out.println("<form action='FindByEmpNo'>  <button> Find By Employee Number</button></form>");
-out.println("<form action='FindByDeptNo'>  <button> Find By Employee Department Number</button></form>");
-out.println("<form action='FindByJob'>  <button> Find By Employee Job</button></form> ");
-out.println("<form action='sortSalAscending'>  <button>  Sort Employee By Salary In Ascending Order</button></form>");
-out.println("<form action='sortSalDescending'> <button>  Sort Employee By Salary In Descending Order</button></form>");
-out.println("<form action='sortNameAscending'>  <button> Sort Employee By Name In Ascending Order</button></form>");
-out.println("<form action='sortNameDescending'>  <button> Sort Employee By Name In Descending Order</button></form>");
-out.println("</div>");
-out.println("</div>");
+             out.println("<div style='display: flex; flex-direction: column; justify-content: center;align-items: center; '> ");
+            out.println("<table border='5' align='center' style='padding:3px'>");
+            out.print("<h1 align='center'>All Employees</h1");
+            out.println("<tr style='padding: 5px;'><th>Employee ID</th>");
+            out.println("<th style='padding: 5px;'>Name</th>");
+            out.println("<th style='padding: 5px;'>Job</th>");
+            out.println("<th style='padding: 5px;'>Comm</th>");
+            out.println("<th style='padding: 5px;'>Department no</th>");
+            out.println("<th style='padding: 5px;'>Mgr no</th>");
+            out.println("<th style='padding: 5px;'>Salary</th>");
             
+            int r= 0;
+            String job = request.getParameter("job");
             
+            EmpDAO ed = new EmpDAO();
+          
+            ArrayList<EmpBean> list = ed.findbyjob(job);
+
+            for (EmpBean sb : list) {
+                out.println("<tr style='padding: 5px;'>");
+                out.println("<td style='padding: 5px;'>" + sb.getEmpno() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getEmpName() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getJob() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getComm() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getDeptno() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getMgr() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getSalary() + "</td>");
+                out.println("<td style='padding: 5px;'> <a href='DeleteEmp?empno="+sb.getEmpno()+"'> Delete </a></td>");
+                out.println("<td style='padding: 5px;'> <a href='EditEmp?empno="+sb.getEmpno()+"'> Edit </a></td>");
+                out.println("</tr>");
+            }
+            out.println(" <table/>");
+             
+            out.println("<h2><a href='index' style='text-decoration: none'>Go To Home Page</a> </h2>");
+            out.println("</div>");
             
-           
             out.println("</body>");
             out.println("</html>");
         }

@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author adi18
  */
-public class index extends HttpServlet {
+public class FindByJob extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,32 +34,21 @@ public class index extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EmpAddController</title>");
+            out.println("<title>Servlet FindByJob</title>");
             out.println("</head>");
             out.println("<body>");
             
-out.println("<body>");
-out.println("<div >");
-out.println("<h1>JDBC Project</h1>");
-out.println("</div>");
-out.println("<div >");
-out.println("<div >");
-out.println("<div >");
-out.println("<form action='addEmp'>   <button> Add Employee </button> </form>");
-out.println("<form action='viewEmpController'>  <button>View All Employee</button></form>    ");
-out.println("<form action='FindByEmpNo'>  <button> Find By Employee Number</button></form>");
-out.println("<form action='FindByDeptNo'>  <button> Find By Employee Department Number</button></form>");
-out.println("<form action='FindByJob'>  <button> Find By Employee Job</button></form> ");
-out.println("<form action='sortSalAscending'>  <button>  Sort Employee By Salary In Ascending Order</button></form>");
-out.println("<form action='sortSalDescending'> <button>  Sort Employee By Salary In Descending Order</button></form>");
-out.println("<form action='sortNameAscending'>  <button> Sort Employee By Name In Ascending Order</button></form>");
-out.println("<form action='sortNameDescending'>  <button> Sort Employee By Name In Descending Order</button></form>");
-out.println("</div>");
-out.println("</div>");
+            out.println("<div style='display: flex; flex-direction: column; justify-content: center;align-items: center; '> ");
+            out.println("<Form action='FindByJobController' style='display: flex;justify-content: center;flex-direction: column;width: 350px;'>");
+            out.println("<h1>Find Employee By Department Number</h1>");
             
+            out.println("<label for='job'>Employee Job</label>");
+            out.println("<input type='text' name='job' placeholder='Enter employee job'style='width: 300px; padding: 5px; margin-bottom: 10px;'>");
+            out.println("<input type='submit' name='submit' value='Find Employee' style='width: 315px; padding: 5px;'/>");
             
+            out.println("</Form>");
+            out.println("</div>");
             
-           
             out.println("</body>");
             out.println("</html>");
         }

@@ -36,6 +36,22 @@
         <servlet-name>FindByEmpNoController</servlet-name>
         <servlet-class>com.demo.controller.FindByEmpNoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FindByDeptNo</servlet-name>
+        <servlet-class>com.demo.controller.FindByDeptNo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FindByDeptNoController</servlet-name>
+        <servlet-class>com.demo.controller.FindByDeptNoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FindByJob</servlet-name>
+        <servlet-class>com.demo.controller.FindByJob</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FindByJobController</servlet-name>
+        <servlet-class>com.demo.controller.FindByJobController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -71,5 +87,21 @@
     <servlet-mapping>
         <servlet-name>FindByEmpNoController</servlet-name>
         <url-pattern>/FindByEmpNoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindByDeptNo</servlet-name>
+        <url-pattern>/FindByDeptNo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindByDeptNoController</servlet-name>
+        <url-pattern>/FindByDeptNoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindByJob</servlet-name>
+        <url-pattern>/FindByJob</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindByJobController</servlet-name>
+        <url-pattern>/FindByJobController</url-pattern>
     </servlet-mapping>
 </web-app>
