@@ -50,10 +50,10 @@ out.println("<form action='viewEmpController'>  <button>View All Employee</butto
 out.println("<form action='FindByEmpNo'>  <button> Find By Employee Number</button></form>");
 out.println("<form action='FindByDeptNo'>  <button> Find By Employee Department Number</button></form>");
 out.println("<form action='FindByJob'>  <button> Find By Employee Job</button></form> ");
-out.println("<form action='sortSalAscending'>  <button>  Sort Employee By Salary In Ascending Order</button></form>");
-out.println("<form action='sortSalDescending'> <button>  Sort Employee By Salary In Descending Order</button></form>");
-out.println("<form action='sortNameAscending'>  <button> Sort Employee By Name In Ascending Order</button></form>");
-out.println("<form action='sortNameDescending'>  <button> Sort Employee By Name In Descending Order</button></form>");
+out.println("<form action='SortBySalaryAscendingController'>  <button>  Sort Employee By Salary In Ascending Order</button></form>");
+out.println("<form action='SortBySalaryDescendingController'> <button>  Sort Employee By Salary In Descending Order</button></form>");
+out.println("<form action='SortByNameAscendingController'>  <button> Sort Employee By Name In Ascending Order</button></form>");
+out.println("<form action='SortByNameDescendingController1'>  <button> Sort Employee By Name In Descending Order</button></form>");
 out.println("</div>");
 out.println("</div>");
             

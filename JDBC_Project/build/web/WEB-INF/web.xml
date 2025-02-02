@@ -52,6 +52,26 @@
         <servlet-name>FindByJobController</servlet-name>
         <servlet-class>com.demo.controller.FindByJobController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SortBySalaryAscending</servlet-name>
+        <servlet-class>com.demo.controller.SortBySalaryAscending</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SortBySalaryAscendingController</servlet-name>
+        <servlet-class>com.demo.controller.SortBySalaryAscendingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SortBySalaryDescendingController</servlet-name>
+        <servlet-class>com.demo.controller.SortBySalaryDescendingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SortByNameAscendingController</servlet-name>
+        <servlet-class>com.demo.controller.SortByNameAscendingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SortByNameDescendingController1</servlet-name>
+        <servlet-class>com.demo.controller.SortByNameDescendingController1</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -103,5 +123,25 @@
     <servlet-mapping>
         <servlet-name>FindByJobController</servlet-name>
         <url-pattern>/FindByJobController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SortBySalaryAscending</servlet-name>
+        <url-pattern>/SortBySalaryAscending</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SortBySalaryAscendingController</servlet-name>
+        <url-pattern>/SortBySalaryAscendingController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SortBySalaryDescendingController</servlet-name>
+        <url-pattern>/SortBySalaryDescendingController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SortByNameAscendingController</servlet-name>
+        <url-pattern>/SortByNameAscendingController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SortByNameDescendingController1</servlet-name>
+        <url-pattern>/SortByNameDescendingController1</url-pattern>
     </servlet-mapping>
 </web-app>

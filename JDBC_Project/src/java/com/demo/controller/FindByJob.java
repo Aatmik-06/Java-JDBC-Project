@@ -40,7 +40,7 @@ public class FindByJob extends HttpServlet {
             
             out.println("<div style='display: flex; flex-direction: column; justify-content: center;align-items: center; '> ");
             out.println("<Form action='FindByJobController' style='display: flex;justify-content: center;flex-direction: column;width: 350px;'>");
-            out.println("<h1>Find Employee By Department Number</h1>");
+            out.println("<h1>Find Employee By Job</h1>");
             
             out.println("<label for='job'>Employee Job</label>");
             out.println("<input type='text' name='job' placeholder='Enter employee job'style='width: 300px; padding: 5px; margin-bottom: 10px;'>");

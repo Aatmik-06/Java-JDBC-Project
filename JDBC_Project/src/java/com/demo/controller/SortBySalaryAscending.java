@@ -4,21 +4,18 @@
  */
 package com.demo.controller;
 
-import com.task.bean.EmpBean;
-import com.task.dao.EmpDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 
 /**
  *
  * @author adi18
  */
-public class viewEmpController extends HttpServlet {
+public class SortBySalaryAscending extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,41 +34,10 @@ public class viewEmpController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet viewEmpController</title>");
+            out.println("<title>Servlet SortBySalaryAscending</title>");
             out.println("</head>");
             out.println("<body>");
-
-            out.println("<table border='5' align='center' style='padding:3px'>");
-            out.print("<h1 align='center'>All Employees</h1");
-            out.println("<tr style='padding: 5px;'><th>Employee ID</th>");
-            out.println("<th style='padding: 5px;'>Name</th>");
-            out.println("<th style='padding: 5px;'>Job</th>");
-            out.println("<th style='padding: 5px;'>Comm</th>");
-            out.println("<th style='padding: 5px;'>Department no</th>");
-            out.println("<th style='padding: 5px;'>Mgr no</th>");
-            out.println("<th style='padding: 5px;'>Salary</th>");
-
-            EmpDAO ed = new EmpDAO();
-            ArrayList<EmpBean> list = ed.findAll();
-
-            for (EmpBean sb : list) {
-                out.println("<tr style='padding: 5px;'>");
-                out.println("<td style='padding: 5px;'>" + sb.getEmpno() + "</td>");
-                out.println("<td style='padding: 5px;'>" + sb.getEmpName() + "</td>");
-                out.println("<td style='padding: 5px;'>" + sb.getJob() + "</td>");
-                out.println("<td style='padding: 5px;'>" + sb.getComm() + "</td>");
-                out.println("<td style='padding: 5px;'>" + sb.getDeptno() + "</td>");
-                out.println("<td style='padding: 5px;'>" + sb.getMgr() + "</td>");
-                out.println("<td style='padding: 5px;'>" + sb.getSalary() + "</td>");
-                out.println("<td style='padding: 5px;'> <a href='DeleteEmp?empno="+sb.getEmpno()+"'> Delete </a></td>");
-                out.println("<td style='padding: 5px;'> <a href='EditEmp?empno="+sb.getEmpno()+"'> Edit </a></td>");
-                out.println("</tr>");
-            }
-            
-            out.println(" <table/>");
-            
-             out.println("<h2 align='center'><a href='index' style='text-decoration: none;' >Go To Home Page</a> </h2>");
-            
+            out.println("<h1>Servlet SortBySalaryAscending at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

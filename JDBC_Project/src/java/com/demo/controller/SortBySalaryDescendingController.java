@@ -18,7 +18,7 @@ import java.util.ArrayList;
  *
  * @author adi18
  */
-public class viewEmpController extends HttpServlet {
+public class SortBySalaryDescendingController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,12 +37,12 @@ public class viewEmpController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet viewEmpController</title>");
+            out.println("<title>Servlet SortBySalaryDescendingController</title>");
             out.println("</head>");
             out.println("<body>");
-
+             out.println("<div style='display: flex; flex-direction: column; justify-content: center;align-items: center; '> ");
             out.println("<table border='5' align='center' style='padding:3px'>");
-            out.print("<h1 align='center'>All Employees</h1");
+            out.print("<h1 align='center'>Sorted Employees By Salary In Descending Order</h1");
             out.println("<tr style='padding: 5px;'><th>Employee ID</th>");
             out.println("<th style='padding: 5px;'>Name</th>");
             out.println("<th style='padding: 5px;'>Job</th>");
@@ -50,9 +50,13 @@ public class viewEmpController extends HttpServlet {
             out.println("<th style='padding: 5px;'>Department no</th>");
             out.println("<th style='padding: 5px;'>Mgr no</th>");
             out.println("<th style='padding: 5px;'>Salary</th>");
-
+            
+            int r= 0;
+            String job = request.getParameter("job");
+            
             EmpDAO ed = new EmpDAO();
-            ArrayList<EmpBean> list = ed.findAll();
+          
+            ArrayList<EmpBean> list = ed.sortBySalDesc();
 
             for (EmpBean sb : list) {
                 out.println("<tr style='padding: 5px;'>");
@@ -67,10 +71,10 @@ public class viewEmpController extends HttpServlet {
                 out.println("<td style='padding: 5px;'> <a href='EditEmp?empno="+sb.getEmpno()+"'> Edit </a></td>");
                 out.println("</tr>");
             }
-            
             out.println(" <table/>");
-            
-             out.println("<h2 align='center'><a href='index' style='text-decoration: none;' >Go To Home Page</a> </h2>");
+             
+            out.println("<h2><a href='index' style='text-decoration: none'>Go To Home Page</a> </h2>");
+            out.println("</div>");
             
             out.println("</body>");
             out.println("</html>");

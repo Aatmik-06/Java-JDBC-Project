@@ -215,6 +215,150 @@ public class EmpDAO {
         return list;
     }
     
+    
+     public ArrayList<EmpBean>sortBySalAsc(){
+        
+        ArrayList<EmpBean> list = new ArrayList<EmpBean>();
+        
+        conn = ConnectionPool.connectDB();
+       
+        
+        String sql = "SELECT * FROM emp ORDER BY salary Asc;";
+        
+        Statement stmt;
+        
+        try {
+            stmt = conn.createStatement();
+       
+             ResultSet rs = stmt.executeQuery(sql);
+             
+              while (rs.next()){
+                  EmpBean e = new EmpBean();
+                  
+                  e.setComm(rs.getFloat("Comm"));
+                  e.setDeptno(rs.getInt("Deptno"));
+                  e.setEmpName(rs.getString("Empname"));
+                  e.setEmpno(rs.getInt("Empno"));
+                  e.setHireDate(rs.getString("Hiredate"));
+                  e.setJob(rs.getString("Job"));
+                  e.setMgr(rs.getInt("Mgr"));
+                  e.setSalary(rs.getDouble("Salary"));
+                  list.add(e);
+              }
+              conn.close();
+         } catch (SQLException ex) {
+            Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+     
+    public ArrayList<EmpBean>sortBySalDesc(){
+        
+        ArrayList<EmpBean> list = new ArrayList<EmpBean>();
+        
+        conn = ConnectionPool.connectDB();
+       
+        
+        String sql = "SELECT * FROM emp ORDER BY salary Desc;";
+        
+        Statement stmt;
+        
+        try {
+            stmt = conn.createStatement();
+       
+             ResultSet rs = stmt.executeQuery(sql);
+             
+              while (rs.next()){
+                  EmpBean e = new EmpBean();
+                  
+                  e.setComm(rs.getFloat("Comm"));
+                  e.setDeptno(rs.getInt("Deptno"));
+                  e.setEmpName(rs.getString("Empname"));
+                  e.setEmpno(rs.getInt("Empno"));
+                  e.setHireDate(rs.getString("Hiredate"));
+                  e.setJob(rs.getString("Job"));
+                  e.setMgr(rs.getInt("Mgr"));
+                  e.setSalary(rs.getDouble("Salary"));
+                  list.add(e);
+              }
+              conn.close();
+         } catch (SQLException ex) {
+            Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    } 
+    
+    public ArrayList<EmpBean>sortByNameAsc(){
+        
+        ArrayList<EmpBean> list = new ArrayList<EmpBean>();
+        
+        conn = ConnectionPool.connectDB();
+       
+        
+        String sql = "SELECT * FROM emp ORDER BY empname Asc;";
+        
+        Statement stmt;
+        
+        try {
+            stmt = conn.createStatement();
+       
+             ResultSet rs = stmt.executeQuery(sql);
+             
+              while (rs.next()){
+                  EmpBean e = new EmpBean();
+                  
+                  e.setComm(rs.getFloat("Comm"));
+                  e.setDeptno(rs.getInt("Deptno"));
+                  e.setEmpName(rs.getString("Empname"));
+                  e.setEmpno(rs.getInt("Empno"));
+                  e.setHireDate(rs.getString("Hiredate"));
+                  e.setJob(rs.getString("Job"));
+                  e.setMgr(rs.getInt("Mgr"));
+                  e.setSalary(rs.getDouble("Salary"));
+                  list.add(e);
+              }
+              conn.close();
+         } catch (SQLException ex) {
+            Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    } 
+    
+     public ArrayList<EmpBean>sortByNameDesc(){
+        
+        ArrayList<EmpBean> list = new ArrayList<EmpBean>();
+        
+        conn = ConnectionPool.connectDB();
+       
+        
+        String sql = "SELECT * FROM emp ORDER BY empname Desc;";
+        
+        Statement stmt;
+        
+        try {
+            stmt = conn.createStatement();
+       
+             ResultSet rs = stmt.executeQuery(sql);
+             
+              while (rs.next()){
+                  EmpBean e = new EmpBean();
+                  
+                  e.setComm(rs.getFloat("Comm"));
+                  e.setDeptno(rs.getInt("Deptno"));
+                  e.setEmpName(rs.getString("Empname"));
+                  e.setEmpno(rs.getInt("Empno"));
+                  e.setHireDate(rs.getString("Hiredate"));
+                  e.setJob(rs.getString("Job"));
+                  e.setMgr(rs.getInt("Mgr"));
+                  e.setSalary(rs.getDouble("Salary"));
+                  list.add(e);
+              }
+              conn.close();
+         } catch (SQLException ex) {
+            Logger.getLogger(EmpDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    } 
      
     public static void main(String[] args) {
         

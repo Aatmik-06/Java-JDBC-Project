@@ -12,12 +12,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  *
  * @author adi18
  */
-public class EditEmp extends HttpServlet {
+public class SortBySalaryAscendingController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,46 +37,44 @@ public class EditEmp extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EditEmp</title>");
+            out.println("<title>Servlet SortBySalaryAscendingController</title>");
             out.println("</head>");
             out.println("<body>");
             
-            int empno = Integer.parseInt(request.getParameter("empno"));
-            EmpDAO sd = new EmpDAO();
-            EmpBean sb = sd.findbyid(empno);
-            
             out.println("<div style='display: flex; flex-direction: column; justify-content: center;align-items: center; '> ");
-            out.println("<Form action='EditEmpController' style='display: flex;justify-content: center;flex-direction: column;width: 350px;'>");
-            out.println("<h1>Edit Employee Form</h1>");
+            out.println("<table border='5' align='center' style='padding:3px'>");
+            out.print("<h1 align='center'>Sorted Employees By Salary In Ascending Order</h1");
+            out.println("<tr style='padding: 5px;'><th>Employee ID</th>");
+            out.println("<th style='padding: 5px;'>Name</th>");
+            out.println("<th style='padding: 5px;'>Job</th>");
+            out.println("<th style='padding: 5px;'>Comm</th>");
+            out.println("<th style='padding: 5px;'>Department no</th>");
+            out.println("<th style='padding: 5px;'>Mgr no</th>");
+            out.println("<th style='padding: 5px;'>Salary</th>");
             
-            out.println("<label for='empNo'>Employee Number</label>");
-            out.println("<input type='number' value='" + sb.getEmpno()+ "' name='empNo' placeholder='Enter employee number'style='width: 300px; padding: 5px; margin-bottom: 10px;'>");
+            int r= 0;
+            String job = request.getParameter("job");
             
-            out.println("<label for='empName'>Employee Name</label>");
-            out.println("<input type='text' value='" + sb.getEmpName()+ "' name='empName' placeholder='Enter employee name'style='width: 300px; padding: 5px; margin-bottom: 10px;'>");
-            
-            out.println("<label for='job'>Job</label> ");
-            out.println("<input type='text' value='" + sb.getJob()+ "' name='job' placeholder='Enter job title'style='width: 300px; padding: 5px; margin-bottom: 10px;'>");
-            
-            out.println("<label for='mgr'>MGR</label> ");
-            out.println("<input type='number' value='" + sb.getMgr()+ "' name='mgr' placeholder='Enter mgr no.'style='width: 300px; padding: 5px; margin-bottom: 10px;'>");
-            
-            out.println("<label for='hiredate'>Hiredate</label> ");
-            out.println("<input type='date' value='" + sb.getHireDate()+ "' name='hiredate'style='width: 300px; padding: 5px;'>");
-            
-            out.println("<label for='salary'>Salary</label> ");
-            out.println("<input type='number' value='" + sb.getSalary()+ "' name='salary' placeholder='Enter salary'style='width: 300px; padding: 5px; margin-bottom: 10px;'>");
-            
-            out.println("<label for='comm'>Comm</label> ");  
-            out.println("<input type='number' value='" + sb.getComm()+ "' name='comm' placeholder='Enter Comm' style='width: 300px; padding: 5px; margin-bottom: 10px;'>");
-            
-            out.println("<label for='deptNo'>Department Number</label> ");
-            out.println("<input type='number' value='" + sb.getDeptno()+ "' name='deptNo' placeholder='Enter department number'style='width: 300px; padding: 5px; margin-bottom: 10px;'>");
-            
-            out.println("<input type='submit' name='submit' value='Update Employee' style='width: 315px; padding: 5px;'/>");
-       
-            
-            out.println("</Form>");
+            EmpDAO ed = new EmpDAO();
+          
+            ArrayList<EmpBean> list = ed.sortBySalAsc();
+
+            for (EmpBean sb : list) {
+                out.println("<tr style='padding: 5px;'>");
+                out.println("<td style='padding: 5px;'>" + sb.getEmpno() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getEmpName() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getJob() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getComm() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getDeptno() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getMgr() + "</td>");
+                out.println("<td style='padding: 5px;'>" + sb.getSalary() + "</td>");
+                out.println("<td style='padding: 5px;'> <a href='DeleteEmp?empno="+sb.getEmpno()+"'> Delete </a></td>");
+                out.println("<td style='padding: 5px;'> <a href='EditEmp?empno="+sb.getEmpno()+"'> Edit </a></td>");
+                out.println("</tr>");
+            }
+            out.println(" <table/>");
+             
+            out.println("<h2><a href='index' style='text-decoration: none'>Go To Home Page</a> </h2>");
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");

@@ -41,7 +41,7 @@ public class FindByJobController extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-             out.println("<div style='display: flex; flex-direction: column; justify-content: center;align-items: center; '> ");
+            out.println("<div style='display: flex; flex-direction: column; justify-content: center;align-items: center; '> ");
             out.println("<table border='5' align='center' style='padding:3px'>");
             out.print("<h1 align='center'>All Employees</h1");
             out.println("<tr style='padding: 5px;'><th>Employee ID</th>");
