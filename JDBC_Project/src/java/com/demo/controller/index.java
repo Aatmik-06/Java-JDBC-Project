@@ -39,22 +39,33 @@ public class index extends HttpServlet {
             out.println("<body>");
 
             out.println("<body>");
-            out.println("<div >");
+            out.println("<div style='text-align: center;'>");
             out.println("<h1>JDBC Project</h1>");
             out.println("</div>");
+            
+            
             out.println("<div >");
-            out.println("<div >");
-            out.println("<div >");
-            out.println("<form action='addEmp'>   <button> Add Employee </button> </form>");
-            out.println("<form action='viewEmpController'>  <button>View All Employee</button></form>    ");
-            out.println("<form action='FindByEmpNo'>  <button> Find By Employee Number</button></form>");
-            out.println("<form action='FindByDeptNo'>  <button> Find By Employee Department Number</button></form>");
-            out.println("<form action='FindByJob'>  <button> Find By Employee Job</button></form> ");
-            out.println("<form action='SortBySalaryAscendingController'>  <button>  Sort Employee By Salary In Ascending Order</button></form>");
-            out.println("<form action='SortBySalaryDescendingController'> <button>  Sort Employee By Salary In Descending Order</button></form>");
-            out.println("<form action='SortByNameAscendingController'>  <button> Sort Employee By Name In Ascending Order</button></form>");
-            out.println("<form action='SortByNameDescendingController1'>  <button> Sort Employee By Name In Descending Order</button></form>");
+            out.println("<div style='text-align: center;'>");
+            out.println("<form action='addEmp'>   <button style='width: 320px; height: 30px;'> Add Employee </button> </form> <br>");
+           
+            out.println("<form action='viewEmpController'>  <button style='width: 320px; height: 30px;'>View All Employee</button></form>  <br>  ");
+            
+            out.println("<form action='FindByEmpNo'>  <button style='width: 320px; height: 30px;'> Find By Employee Number</button></form> <br>" );
+            
+            out.println("<form action='FindByDeptNo'>  <button style='width: 320px; height: 30px;'> Find By Employee Department Number</button></form><br>");
+            
+            out.println("<form action='FindByJob'>  <button style='width: 320px; height: 30px;'> Find By Employee Job</button></form> <br>");
+            
+            out.println("<form action='SortBySalaryAscendingController'>  <button style='width: 320px; height: 30px;'>  Sort Employee By Salary In Ascending Order</button></form> <br>");
+            
+            out.println("<form action='SortBySalaryDescendingController'> <button style='width: 320px; height: 30px;'>  Sort Employee By Salary In Descending Order</button></form> <br>");
+            
+            out.println("<form action='SortByNameAscendingController'>  <button  style='width: 320px; height: 30px;'> Sort Employee By Name In Ascending Order</button></form> <br>");
+            
+            out.println("<form action='SortByNameDescendingController1'>  <button style='width: 320px; height: 30px;'> Sort Employee By Name In Descending Order</button></form> <br>");
+            
             out.println("</div>");
+            
             out.println("</div>");
 
             out.println("</body>");
