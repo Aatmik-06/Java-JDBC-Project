@@ -24,7 +24,7 @@ public class ConnectionPool {
          } catch (ClassNotFoundException | SQLException ex) {
              Logger.getLogger(ConnectionPool.class.getName()).log(Level.SEVERE, null, ex);
          }
-         System.out.println("Connection Successfull!!!");
+         
          
          return conn; 
      }
