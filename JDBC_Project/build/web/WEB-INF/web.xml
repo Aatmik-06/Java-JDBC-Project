@@ -72,6 +72,14 @@
         <servlet-name>SortByNameDescendingController1</servlet-name>
         <servlet-class>com.demo.controller.SortByNameDescendingController1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loginController</servlet-name>
+        <servlet-class>com.demo.controller.loginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>registerUser</servlet-name>
+        <servlet-class>com.demo.controller.registerUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -143,5 +151,13 @@
     <servlet-mapping>
         <servlet-name>SortByNameDescendingController1</servlet-name>
         <url-pattern>/SortByNameDescendingController1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginController</servlet-name>
+        <url-pattern>/loginController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registerUser</servlet-name>
+        <url-pattern>/registerUser</url-pattern>
     </servlet-mapping>
 </web-app>
